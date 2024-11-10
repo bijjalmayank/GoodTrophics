@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cake, Cookie, Wheat, Leaf, Coffee, Sandwich } from 'lucide-react';
+import { Cake, Cookie, Wheat, Leaf, Coffee, Sandwich, Info, Settings } from 'lucide-react';
 
 const bakingCategories = [
   {
@@ -170,8 +170,13 @@ const BakingUses = () => {
         >
           <h3 className="text-2xl font-bold text-gray-800 mb-6">Professional Tips</h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-xl font-semibold mb-4">Storage & Handling</h4>
+            <div className="bg-green-50 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center text-green-600 mr-4">
+                  <Info className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-semibold">Storage & Handling</h4>
+              </div>
               <ul className="space-y-2 text-gray-600">
                 <li>• Store in airtight containers</li>
                 <li>• Keep in cool, dry conditions</li>
@@ -179,13 +184,18 @@ const BakingUses = () => {
                 <li>• Shelf life: 12 months when properly stored</li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-xl font-semibold mb-4">Usage Guidelines</h4>
+            <div className="bg-blue-50 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                  <Settings className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-semibold">Usage Guidelines</h4>
+              </div>
               <ul className="space-y-2 text-gray-600">
                 <li>• Start with 5-10% substitution</li>
                 <li>• Adjust liquid content as needed</li>
                 <li>• Perfect for clean label products</li>
-                <li>• Ideal egg replacer (1:1 ratio)</li>
+                <li>• Ideal egg replacer (1:1 ratio by weight)</li>
               </ul>
             </div>
           </div>

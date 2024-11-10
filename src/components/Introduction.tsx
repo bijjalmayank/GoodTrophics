@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Leaf, Heart, Brain } from 'lucide-react';
 
 const Introduction = () => {
   return (
@@ -19,56 +18,40 @@ const Introduction = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <Leaf className="w-8 h-8 text-green-500" />,
-              title: "100% Natural",
-              description: "Sustainably sourced and minimally processed to preserve all natural nutrients"
-            },
-            {
-              icon: <Heart className="w-8 h-8 text-red-500" />,
-              title: "Heart Healthy",
-              description: "Rich in potassium and magnesium for optimal cardiovascular health"
-            },
-            {
-              icon: <Brain className="w-8 h-8 text-blue-500" />,
-              title: "Brain Power",
-              description: "Essential B vitamins support cognitive function and mental clarity"
-            }
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">{item.title}</h3>
-              <p className="text-gray-600 text-center">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Left side: Banana photo */}
+          <div className="flex-1 relative">
+            <motion.img
+              src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Banana plantation"
+              className="rounded-2xl shadow-lg mx-auto mb-8 opacity-70 h-80 w-full object-cover"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            />
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            alt="Banana plantation"
-            className="rounded-2xl shadow-lg mx-auto mb-8"
-          />
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Our bananas are carefully selected from sustainable farms and processed using state-of-the-art 
-            technology to ensure the highest quality powder while maintaining all natural benefits.
-          </p>
-        </motion.div>
+          {/* Right side: Benefits of Banana Powder */}
+          <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8"
+            >
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Why Banana Powder is Good for You</h3>
+              <p className="text-gray-600 mb-4">
+                Raw banana powder is rich in dietary fiber, essential vitamins, and minerals. It's a great addition to your diet to promote gut health, support metabolism, and maintain a healthy weight.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Packed with resistant starch, it aids in digestion and helps maintain healthy blood sugar levels. Its natural energy-boosting properties make it a perfect addition to smoothies and recipes.
+              </p>
+              <p className="text-gray-600 mb-4">
+                The powder is also an excellent source of potassium, helping to maintain a healthy heart and regulate blood pressure.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

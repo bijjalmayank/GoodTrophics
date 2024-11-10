@@ -9,6 +9,7 @@ import Benefits from './components/Benefits';
 import BakingUses from './components/BakingUses';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BenefitsSection from './components/BenefitsSection';
 import { motion } from 'framer-motion';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <main>
         <Hero />
         <Introduction />
+        <BenefitsSection />
         <Features />
         <motion.div
           initial={{ opacity: 0 }}

@@ -5,6 +5,9 @@ import Introduction from './components/Introduction';
 import Advantages from './components/Advantages';
 import Vitamins from './components/Vitamins';
 import Benefits from './components/Benefits';
+import BenefitsSection from './components/BenefitsSection';
+import BakingUses from './components/BakingUses';
+import CardSection from './components/CardSection.jsx';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { motion } from 'framer-motion';
@@ -16,6 +19,7 @@ function App() {
       <main>
         <Hero />
         <Introduction />
+        <BenefitsSection />
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -24,7 +28,9 @@ function App() {
           <Advantages />
         </motion.div>
         <Vitamins />
+        <BakingUses />
         <Benefits />
+        <CardSection />
         <Contact />
       </main>
       <Footer />
